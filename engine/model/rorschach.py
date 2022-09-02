@@ -9,7 +9,7 @@ class Rorschach(car_factory):
     def Battery(self):
         return Battery_factory.check_battery(self,self.battery)
     def needs_service(self):
-        if Rorschach.Engine() == True or Calliope.Battery() == True:
+        if Rorschach.Engine() == True or Rorschach.Battery() == True:
             return True
         else:
             return False

@@ -9,7 +9,7 @@ class Thovex(car_factory):
     def Battery(self):
         return Battery_factory.check_battery(self,self.battery)
     def needs_service(self):
-        if Thovex.Engine() == True or Calliope.Battery() == True:
+        if Thovex.Engine() == True or Thovex.Battery() == True:
             return True
         else:
             return False
