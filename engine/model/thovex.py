@@ -1,12 +1,15 @@
-from datetime import datetime
+from car_factory import car_factory
+from engine_factory import Engine_factory
+from battery.battery_factory import Battery_factory
 
-from engine.capulet_engine import CapuletEngine
 
-
-class Thovex(CapuletEngine):
+class Thovex(car_factory):
+    def Engine(self):
+        return Engine_factory.check_engine(self,self.engine)
+    def Battery(self):
+        return Battery_factory.check_battery(self,self.battery)
     def needs_service(self):
-        service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 4)
-        if service_threshold_date < datetime.today().date() or self.engine_should_be_serviced():
+        if Thovex.Engine() == True or Calliope.Battery() == True:
             return True
         else:
             return False
