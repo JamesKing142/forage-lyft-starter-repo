@@ -1,8 +1,11 @@
-from abc import ABC
 from engine_factory import Engine_factory
 
-class SternmanEngine(Engine_factory):
-    
-    def engine_should_be_serviced(self):
+class Sternman(Engine_factory):
+    def __init__ (self, warning_light: bool):
+        self.warning_light: warning_light
+
+    def need_service(self):
         if self.warning_light:
             return True
+        else:
+            return False

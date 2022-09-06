@@ -1,8 +1,12 @@
-from abc import ABC
 from engine_factory import Engine_factory
 
-class CapuletEngine(Engine_factory):
+class Capulet(Engine_factory):
+    def __init__(self, current_mileage, last_service_mileage):
+        self.current_mileage = current_mileage
+        self.last_service_mileage = last_service_mileage
 
-    def engine_should_be_serviced(self):
+    def need_service(self):
         if self.current_mileage - self.last_service_mileage > 30000:
             return True
+        else: 
+            return False
