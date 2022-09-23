@@ -20,16 +20,16 @@ class Car_factory:
     def create_glissade(last_service_date, current_mileage, last_service_mileage):
 
         engine = willoughby_engine.Willoughby(current_mileage, last_service_mileage)
-        battery = spindler_battery.Splinder(last_service_date)
+        battery = spindler_battery.Spindler(last_service_date)
         car = Car(engine, battery)
 
         return car
 
     @staticmethod
-    def create_palindrome(last_service_date, current_mileage, last_service_mileage):
+    def create_palindrome(last_service_date, warning_light: bool):
 
-        engine = sternman_engine.Sternman(current_mileage, last_service_mileage)
-        battery = spindler_battery.Splinder(last_service_date)
+        engine = sternman_engine.Sternman(warning_light)
+        battery = spindler_battery.Spindler(last_service_date)
         car = Car(engine, battery)
 
         return car
