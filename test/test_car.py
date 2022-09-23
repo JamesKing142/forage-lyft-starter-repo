@@ -115,7 +115,7 @@ class Test_Palindrome (unittest.TestCase):
         self.assertTrue(car.need_service())
 
     def test_battery_not_serviced(self):
-        current_date = get_current_date-date()
+        current_date = get_current_date()
         last_service_date = add_year_to_date(current_date, 0)
         self_warning_light = False
 
