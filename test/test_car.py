@@ -1,16 +1,3 @@
-import sys
-import os
-
-# Getting the absolute path to the current directory
-current_dir = os.path.dirname(os.path.realpath(__file__))
-
-#Getting the path to  the parent directory
-parent = os.path.dirname(current_dir)
-
-#setting path
-sys.path.append(parent)
-
-#importing
 import unittest
 from car_factory import Car_factory
 from utils import add_year_to_date, get_current_date
